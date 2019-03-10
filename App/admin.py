@@ -7,6 +7,7 @@ class SlikaNekretnineInline(admin.TabularInline):
     extra = 0
 
 class NekretninaAdmin(admin.ModelAdmin):
+    change_form_template = 'admin/App/Nekretnina/change_form.html'
     search_fields = ['id', 'ulica']
     list_filter = ['tip', 'lokacija']
     inlines = [SlikaNekretnineInline,]
