@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block active_about %}
+    <li class="nav-item active">
+{% endblock %}
+
+{% block title %}
+    <title>O nama</title>
+{% endblock %}
+
+{% block body %}
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-10 offset-1">
+                            <h1 class="text-center text-danger font-weight-bold" style="font-size: 3ex;">IN NEKRETNINE</h1>
+                            <h2 class="text-center text-danger">Registarski broj posrednika: 400</h2>
+                            <br/>
+                            <p>Dugogodišnji rad osnivača preduzeća u oblasti nekretnina rezultirao je osnivanjem preduzeća koje se sveobuhvatno bavi nekretninama na zadovoljstvo naših klijenata. Osnovna delatnost je  posredovanje u prometu nepokretnosti. Pored posredovanja bavimo se pružanjem sledećih usluga:</p>
+                            <ul style="list-style-type: none">
+                                <li><i class="fa fa-check-circle text-danger"></i> uknjižba objekata u katastar nepokretnosti</li>
+                                <li><i class="fa fa-check-circle text-danger"></i> davanje pravnih saveta</li>
+                                <li><i class="fa fa-check-circle text-danger"></i> saradnja sa vodećim poslovnim bankama u cilju pomoći klijentima oko kredita</li>
+                                <li><i class="fa fa-check-circle text-danger"></i> administrativna pomoć kod kompletiranja dokumentacije neophodne za PU (obračun poreza, oslobađanje kod kupovine prve nekretnine...)</li>
+                                <li><i class="fa fa-check-circle text-danger"></i> provera komunalnih i fiskalnih obaveza i prevođenje na novog vlasnika nekretnine</li>
+                                <li><i class="fa fa-check-circle text-danger"></i> legalizacija objekta</li>
+                                <li><i class="fa fa-check-circle text-danger"></i> konverzija zemljišta</li>
+                                <li><i class="fa fa-check-circle text-danger"></i> prikupljanje dokumentacije za gradnju zaključno sa građevinskom dozvolom</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <section id="team" class="light-bg w-100">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-12 text-center">
+                                        <div class="section-title">
+                                            <p></p>
+                                            <h2 class="text-center text-danger font-weight-bold" style="font-size: 3ex;">Naš tim</h2>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <!-- team member item -->
+                                    <div class="col-md-6">
+                                        <div class="team-item">
+                                            <div class="team-image">
+                                                <img src="{% static 'images/stefan.jpg' %}" class="img-responsive w-75" alt="author">
+                                            </div>
+                                            <div class="team-text">
+                                                <h3>Stefan Živković</h3>
+                                                <div class="team-position">Agent prodaje</div>
+                                                <div class="">
+                                                    <i class="fa fa-mobile"> +381(0)60 33 80 112 </i>
+                                                </div>
+                                                <div class="">
+                                                    <a href="mailto:in.nekretnine.stefan@gmail.com" class="text-danger"><i class="fa fa-google"></i> - in.nekretnine.stefan@gmail.com</a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end team member item -->
+                                    <!-- team member item -->
+                                    <div class="col-md-6">
+                                        <div class="team-item ">
+                                            <div class="team-image">
+                                                <img src="{% static 'images/stefan.jpg' %}" class="img-responsive w-75" alt="author">
+                                            </div>
+                                            <div class="team-text">
+                                                <h3>Ivana Geratović</h3>
+                                                <div class="team-position">Agent prodaje</div>
+                                                <div class="">
+                                                    <i class="fa fa-mobile-phone"> +381(0)60 33 80 117</i>
+                                                </div>
+                                                <div class="">
+                                                    <a href="mailto:in.nekretnine.ivana@gmail.com" class="text-danger"><i class="fa fa-google"></i> - in.nekretnine.ivana@gmail.com</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end team member item -->
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block specijalna_ponuda %}
+    {% include 'specijalna_ponuda.html' with specijalna_ponuda=specijalna_ponuda %}
+{% endblock %}

@@ -1,0 +1,35 @@
+{% load staticfiles %}
+
+<div class="container-fluid" id="specijalna_ponuda">
+    <h2 class="text-danger text-center text">Specijalna ponuda</h2>
+    <br/>
+    {% for nekretnina in specijalna_ponuda %}
+        <div class="row">
+            <br/>
+            <div class="col-md-12">
+                <div class="card">
+                    {% if nekretnina.thumbnail %}
+                        <a href="{% url 'detail' nekretnina.pk %}">
+                            <img class="card-img-top" src="/{{ nekretnina.thumbnail.url }}"/>
+                        </a>
+                    {% else %}
+                        <a href="{% url 'detail' nekretnina.pk %}">
+                            <img class="card-img-top" src="{% static 'images/No_image_available.svg' %}"/>
+                        </a>
+                    {% endif %}
+                    <div class="card-body">
+                        <h4 class="card-title">{{ nekretnina.tip }}</h4>
+                        <p class="font-weight-bold">
+                            <i class="fa fa-map-marker text-danger"></i> {{ nekretnina.mesto }}
+                        </p>
+                        <p class="card-text">{{ nekretnina.povrsina }} m<sup>2</sup></p>
+                        <p class="card-text">{{ nekretnina.cena }} EUR</p>
+                        <a href="{% url 'detail' nekretnina.pk %}" class="btn btn-outline-danger">Detaljnije</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+    {% endfor %}
+    <br/>
+</div>

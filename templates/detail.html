@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    <title>{{ nekretnina.tip }} - {{ nekretnina.id }}</title>
+{% endblock %}
+
+{% block body %}
+    <!-- Nova galerija pocetak -->
+    {% if nekretnina.slikanekretnine_set.all %}
+    <div class="container page-top card">
+        <br/>
+        <h2 class="text-danger text-center">Slike</h2>
+        <br/>
+        <div class="row">
+            {% for image in nekretnina.slikanekretnine_set.all|slice:'1:' %}
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a href="/{{ image.slika.url }}" class="fancybox" rel="ligthbox">
+                <img  src="/{{ image.slika.url }}" class="zoom img-fluid "  alt="">
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+    {% endif %}
+    <!-- Nova galerija kraj -->
+    <br/>
+    <div class="card">
+        <!-- Tip nekretnine -->
+        <div class="row m-1">
+            <div class="col-md-10 offset-1">
+                <h3 style="display: inline" class="text-danger">Tip nekretnine: </h3>
+                <p style="display: inline"> {{ nekretnina.tip }} </p>
+            </div>
+        </div>
+        <!-- Mesto -->
+        {% if nekretnina.mesto != '-' and nekretnina.mesto %}
+        <div class="row m-1">
+            <div class="col-md-10 offset-1">
+                <h3 style="display: inline" class="text-danger">Mesto: </h3>
+                <p style="display: inline"> {{ nekretnina.mesto }} </p>
+            </div>
+        </div>
+        {% endif %}
+        <!-- Lokacija -->
+        {% if nekretnina.lokacija != '-' and nekretnina.lokacija %}
+        <div class="row m-1">
+            <div class="col-md-10 offset-1">
+                <h3 style="display: inline" class="text-danger">Lokacija: </h3>
+                <p style="display: inline"> {{ nekretnina.lokacija }} </p>
+            </div>
+        </div>
+        {% endif %}
+        <!-- Povrsina -->
+        <div class="row m-1">
+            <div class="col-md-10 offset-1">
+                <h3 style="display: inline" class="text-danger">Površina: </h3>
+                <p style="display: inline"> {{ nekretnina.povrsina }} m<sup>2</sup></p>
+            </div>
+        </div>
+        <!-- Struktura -->
+        {% if nekretnina.struktura != '-' and nekretnina.struktura %}
+        <div class="row m-1">
+            <div class="col-md-10 offset-1">
+                    <h3 style="display: inline" class="text-danger">Struktura: </h3>
+                    <p style="display:inline;"> {{ nekretnina.struktura }}</p>
+            </div>
+        </div>
+        {% endif %}
+        <!-- Spratnost -->
+        {% if nekretnina.spratnost != '-' and nekretnina.spratnost%}
+        <div class="row m-1">
+            <div class="col-md-10 offset-1">
+                <h3 style="display: inline" class="text-danger">Spratnost: </h3>
+                <p style="display: inline"> {{ nekretnina.spratnost }}</p>
+            </div>
+        </div>
+        {% endif %}
+        <!-- Grejanje -->
+        {% if nekretnina.grejanje != '-' %}
+        <div class="row m-1">
+            <div class="col-md-10 offset-1">
+                    <h3 style="display: inline" class="text-danger">Grejanje: </h3>
+                    <p style="display: inline"> {{ nekretnina.grejanje }}</p>
+            </div>
+        </div>
+        {% endif %}
+        <div class="row m-1">
+            <div class="col-md-10 offset-1">
+                <h3 class="text-danger">Opis</h3>
+                <p>{{ nekretnina.opis }}</p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{% block specijalna_ponuda %}
+    {% include 'specijalna_ponuda.html' with specijalna_ponuda=specijalna_ponuda %}
+{% endblock %}

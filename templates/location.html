@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block active_location %}
+    <li class="nav-item active">
+{% endblock %}
+
+{% block title %}
+    <title>Lokacija</title>
+{% endblock %}
+
+{% block body %}
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-10 offset-1">
+                            <h2 class="text-danger text-center">Lokacija</h2>
+                            <br/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="mapouter w-100">
+                                <div class="gmap_canvas w-100">
+                                    <iframe height="600px" id="gmap_canvas" src="https://maps.google.com/maps?q=Sabac%20Karadjordjeva%2065&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                                    <a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
+                                </div><style>.mapouter{text-align:right;height:600px;width:1000px;}.gmap_canvas {overflow:hidden;background:none!important;height:600px;width:1000px;}</style>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block specijalna_ponuda %}
+    {% include 'specijalna_ponuda.html' with specijalna_ponuda=specijalna_ponuda %}
+{% endblock %}

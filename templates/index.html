@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            {% if broj_rezultata %}
+                <h2>{{ broj_rezultata }} rezultata</h2>
+            {% else %}
+                <h2>Nema rezultata</h2>
+            {% endif %}
+        </div>
+    </div>
+    {% for nekretnina in nekretnine %}
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                {% if nekretnina.thumbnail %}
+                                    <a href="{% url 'detail' nekretnina.pk %}">
+                                        <img src="/{{ nekretnina.thumbnail.url }}" alt="Nema slike">
+                                    </a>
+                                {% else %}
+                                    <a href="{% url 'detail' nekretnina.pk %}">
+                                        <img src="{% static 'images/No_image_available.svg' %}">
+                                    </a>
+                                {% endif %}
+                            </div>
+                            <div class="col-md-6  card-body">
+                                <div class="list-title">
+                                    <ul class="list-inline list-unstyled">
+                                        <li class="list-inline-item"><a href="{% url 'detail' nekretnina.pk %}" class="text-danger"><h3>{{ nekretnina.tip }}</h3></a></li>
+                                    </ul>
+                                </div>
+                                <div class="list-location">
+                                    <i class="fa fa-map-marker text-danger"></i> {{ nekretnina.mesto }}
+                                </div>
+                                {% if nekretnina.lokacija != '-' %}
+                                <div class="list-location">
+                                    <i class="fa fa-map-marker text-danger"></i> {{ nekretnina.lokacija }}
+                                </div>
+                                {% endif %}
+                                <div class="list-descrip">
+                                    <small>{{ nekretnina.opis }}</small>
+                                </div>
+                            </div>
+                            <div class="col-md-3 border-left card-body">
+                                <ul class="list-unstyled">
+                                    <li><h3>Cena: {{ nekretnina.cena }} EUR</h3></li>
+                                    <li class="text-secondary"><small>Površina: {{ nekretnina.povrsina }} m<sup>2</sup></small></li>
+                                </ul>
+                                <a href="{% url 'detail' nekretnina.pk %}" class="btn btn-outline-danger">Detaljnije</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+    {% if  broj_rezultata %}
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="paginator pagination">
+            {% if nekretnine.has_previous %}
+                <li class="page-item"><a class="page-link text-danger font-weight-bold" href="{{ request.get_full_path }}&page={{ nekretnine.previous_page_number }}">Previous</a></li>
+            {% else %}
+                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+            {% endif %}
+
+                <ul class="paginator pagination table-responsive w-auto">
+                {% for stranica in stranice %}
+                    {% if stranica == trenutna_stranica %}
+                        <li class="page-item"><a class="page-link text-danger font-weight-bold" href="{{ request.get_full_path }}&page={{ stranica }}">{{ stranica }}</a></li>
+                    {% else %}
+                        <li class="page-item"><a class="page-link text-danger" href="{{ request.get_full_path }}&page={{ stranica }}">{{ stranica }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                </ul>
+
+            {% if nekretnine.has_next %}
+                <li class="page-item"><a class="page-link text-danger font-weight-bold" href="{{ request.get_full_path }}&page={{ nekretnine.next_page_number }}">Next</a></li>
+            {% else %}
+                <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
+            {% endif %}
+            </ul>
+        </div>
+    </div>
+    {% endif %}
+{% endblock %}
+
+{% block specijalna_ponuda %}
+    {% include 'specijalna_ponuda.html' with specijalna_ponuda=specijalna_ponuda %}
+{% endblock %}

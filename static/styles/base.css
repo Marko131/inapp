@@ -1,0 +1,215 @@
+.search-sec{
+    padding: 2rem;
+    z-index: 10;
+}
+.search-slt{
+    display: block;
+    width: 100%;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #55595c;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    height: calc(3rem + 2px) !important;
+    border-radius:0;
+}
+.wrn-btn{
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: capitalize;
+    height: calc(3rem + 2px) !important;
+    border-radius:0;
+}
+@media (min-width: 992px){
+    .search-sec{
+        position: relative;
+        top: -114px;
+        background: rgba(26, 70, 104, 0.51);
+    }
+}
+
+@media (max-width: 992px){
+    .search-sec{
+        background: #1A4668;
+    }
+}
+
+/*Our partners section*/
+
+.section-title h2{
+	font-size: 40px;
+	color: #dc3545;
+	font-weight: 900;
+	letter-spacing: -0.6px;
+	position: relative;
+	margin: 0 0 50px 0;
+	padding-bottom: 15px;
+}
+.section-title h3{
+	font-size: 25px;
+	color: #dc3545;
+	font-weight: 900;
+	letter-spacing: -0.6px;
+	position: relative;
+	margin: 0 0 50px 0;
+	padding-bottom: 15px;
+}
+
+.section-title h2:after, .section-title h3:after{
+	left: 50%;
+	z-index: 1;
+	width: 60px;
+	height: 3px;
+	content: " ";
+	bottom: -5px;
+	margin-left: -30px;
+	text-align: center;
+	position: absolute;
+	background: #dc3545;
+}
+
+.dark-bg .section-title h2, .dark-bg .section-title h3 {
+	color: #fff;
+}
+
+
+.section-title p {
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 31px;
+	margin: 20px 100px 60px 100px;
+}
+.owl-portfolio .owl-controls {
+	position: absolute;
+	left: 0;
+	top: 38%;
+	width: 100%;
+}
+
+.owl-portfolio .owl-controls .owl-nav [class*=owl-] {
+	padding: 8px 17px;
+	background: rgba(0, 0, 0, 0.18);
+	border-radius: 0;
+	margin: 0;
+	font-size: 20px;
+	z-index:1000;
+}
+
+.owl-portfolio .owl-controls .owl-nav [class*=owl-]:hover {
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+}
+
+.owl-portfolio .owl-controls .owl-prev {
+	float: left;
+}
+
+.owl-portfolio .owl-controls .owl-next {
+	float: right;
+}
+
+.owl-portfolio-item {
+	text-align: center;
+	display: inline-block;
+}
+
+.partner-logo {
+	height: 80px;
+	text-align: center;
+	display: inline-block;
+}
+
+.partner-logo img {
+	height: 100%;
+	width: auto !important;
+}
+
+.owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: #dc3545;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+    width: 30px;
+    height: 5px;
+    margin: 15px 7px 0 7px;
+    background: #d6d6d6;
+    display: block;
+    -webkit-backface-visibility: visible;
+    -webkit-transition: opacity 200ms ease;
+    -moz-transition: opacity 200ms ease;
+    -ms-transition: opacity 200ms ease;
+    -o-transition: opacity 200ms ease;
+    transition: opacity 200ms ease;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 0;
+}
+
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: #dc3545;
+}
+
+/* Our team section*/
+.team-item {
+	text-align: center;
+	background-color: #fff;
+}
+
+.team-item h3 {
+	font-size: 16px;
+	font-weight: 800;
+	text-transform: uppercase;
+	color: #2D2D2D;
+}
+
+.team-item .team-position {
+	color: #989898;
+	font-size: 12px;
+	margin: 15px 0 10px;
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 2px;
+}
+
+.team-item p {
+    font-size: 13px;
+    font-weight: 400;
+    color: #292929;
+    padding: 5px 10px 20px 10px;
+}
+
+.team-socials {
+	padding-bottom: 25px;
+}
+
+.team-socials a {
+    color: #B2B3B7;
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+.team-socials a:hover {
+	color: #000;
+}
+
+#custom-search-div{
+    border-style: solid;
+    border-color: #dc3545;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+#specijalna_ponuda{
+    border-style: solid;
+    border-color: #dc3545;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+#gmap_canvas{
+    width: 100% !important;
+}

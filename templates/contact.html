@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block active_contact %}
+    <li class="nav-item active">
+{% endblock %}
+
+{% block title %}
+    <title>Kontakt</title>
+{% endblock %}
+
+{% block body %}
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-title text-center text-danger">
+                    <br/>
+                    <h2>Kontakt</h2>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8 offset-2 text-center">
+                            <p>ITALY STILL DOO, RUMA</p>
+                            <p>OGRANAK IN NEKRETNINE</p>
+                            <p>Karađorđeva 65</p>
+                            <p>15000 Šabac</p>
+                            <p>Stefan Živković</p>
+                            <a class="text-danger" href="mailto:in.nekretnine.stefan@gmail.com"><p>in.nekretnine.stefan@gmail.com</p></a>
+                            <p>Telefon: 015/348-841</p>
+                            <p>Mobilni: 060/338-0-115</p>
+                            <p>Fax: 061/820-88-38</p>
+                            <p>E-mail: <a class="text-danger" href="mailto:office@innekretnine.rs">office@innekretnine.rs</a></p>
+                            <p>Registarski broj posrednika: 400</p>
+                            <br/><br/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-10 offset-1 text-center text-danger">
+                            <h3>Postavite pitanje</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-10 offset-1">
+                            <form action="{% url 'postavi_pitanje' %}" method="post" id="postavi_pitanje">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-md-6 form-group">
+                                        <input type="text" class="form-control" name="ime" placeholder="Ime" required="required">
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <input type="email" class="form-control" name="email" placeholder="E-mail" required="required">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 form-group">
+                                        <textarea name="poruka" rows="7" class="form-control" placeholder="Pitanje..." required="required"></textarea>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 form-group text-center">
+                                        <button type="submit" class="btn btn-danger">Pošalji</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block specijalna_ponuda %}
+    {% include 'specijalna_ponuda.html' with specijalna_ponuda=specijalna_ponuda %}
+{% endblock %}
