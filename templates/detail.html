@@ -8,7 +8,7 @@
 {% block body %}
     <!-- Nova galerija pocetak -->
     {% if nekretnina.slikanekretnine_set.all %}
-    <div class="container page-top card">
+    <div class="container page-top card mt-0">
         <br/>
         <h2 class="text-danger text-center">Slike</h2>
         <br/>
@@ -21,11 +21,11 @@
             </div>
             {% endfor %}
         </div>
-
     </div>
+    <br/>
     {% endif %}
     <!-- Nova galerija kraj -->
-    <br/>
+
     <div class="card">
         <!-- Tip nekretnine -->
         <div class="row m-1">

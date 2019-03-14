@@ -18,7 +18,9 @@
                         </a>
                     {% endif %}
                     <div class="card-body">
-                        <h4 class="card-title">{{ nekretnina.tip }}</h4>
+                        <a href="{% url 'detail' nekretnina.pk %}" class="text-danger">
+                            <h4 class="card-title">{{ nekretnina.tip }}</h4>
+                        </a>
                         <p class="font-weight-bold">
                             <i class="fa fa-map-marker text-danger"></i> {{ nekretnina.mesto }}
                         </p>

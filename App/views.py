@@ -50,8 +50,7 @@ def index(request):
         page = int(request.GET['page'])
     except:
         page = 1
-    print(page)
-    paginator = Paginator(list(sortirano), 1)
+    paginator = Paginator(list(sortirano), 15)
     lista_nekretnina = paginator.get_page(page)
     stranice = [i+1 for i in range(lista_nekretnina.paginator.num_pages)]
     rezultati = len(sortirano)

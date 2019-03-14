@@ -213,3 +213,6 @@
 #gmap_canvas{
     width: 100% !important;
 }
+#sitefooter {
+    color: rgba(255,255,255,.5) !important;
+}
