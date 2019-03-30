@@ -17,6 +17,10 @@ class NekretninaAdmin(admin.ModelAdmin):
         for afile in request.FILES.getlist('photos_multiple'):
             obj.slikanekretnine_set.create(slika=afile)
 
+
+class PostaviPitanjeAdmin(admin.ModelAdmin):
+    readonly_fields = ('ime', 'email', 'pitanje')
+
 admin.site.register(Nekretnina, NekretninaAdmin)
 admin.site.register(SlikaNekretnine)
-admin.site.register(PostaviPitanje)
+admin.site.register(PostaviPitanje, PostaviPitanjeAdmin)

@@ -57,6 +57,10 @@ class Nekretnina(models.Model):
     thumbnail = models.ImageField(blank=True, null=True)
     napomena = models.TextField(max_length=1500, blank=True, null=True)
 
+    class Meta:
+        verbose_name = 'Nekretnina'
+        verbose_name_plural = 'Nekretnine'
+
     def __str__(self):
         return str(self.pk) + ' - ' + self.tip + ' - ' + self.mesto + ' - ' + str(self.ulica)
 
@@ -65,11 +69,18 @@ class SlikaNekretnine(models.Model):
     nekretnina = models.ForeignKey(Nekretnina, default=None, on_delete=models.CASCADE)
     slika = models.ImageField(blank=True, null=True)
 
+    class Meta:
+        verbose_name = 'Slika nekretnine'
+        verbose_name_plural = 'Slike nekretnina'
 
 class PostaviPitanje(models.Model):
     ime = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
     pitanje = models.TextField()
+
+    class Meta:
+        verbose_name = 'Pitanje'
+        verbose_name_plural = 'Pitanja'
 
     def __str__(self):
         return str(self.pk) + ' - ' + self.ime + ' - ' + self.email
