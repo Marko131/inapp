@@ -132,8 +132,8 @@ MEDIA_URL = 'Images/'
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_PASSWORD = 'markomarko113197' #my gmail password
-EMAIL_HOST_USER = 'markostanic222@gmail.com' #my gmail username
+EMAIL_HOST_PASSWORD = 'nemanjazivkovic123' #my gmail password
+EMAIL_HOST_USER = 'innekretninehostmail@gmail.com' #my gmail username
 EMAIL_PORT = 587
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 django_heroku.settings(locals())

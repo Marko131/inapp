@@ -93,6 +93,6 @@ def postavi_pitanje(request):
     pp = PostaviPitanje(ime=ime, email=email, pitanje=pitanje)
     pp.save()
 
-    e = EmailMessage('InNekretnine', ime + '\n\n' + email + '\n\n' + pitanje, to=['zivkovic97nemanja@gmail.com'])
+    e = EmailMessage('InNekretnine', ime + '\n\n' + email + '\n\n' + pitanje, to=['markostanic222@gmail.com'])
     e.send()
     return contact(request)
